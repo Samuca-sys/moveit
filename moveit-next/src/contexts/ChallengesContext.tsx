@@ -1,4 +1,5 @@
 import { createContext, useState, ReactNode, useEffect } from 'react';
+import { isMobile } from 'react-device-detect';
 import Cookies from 'js-cookie';
 
 import challenges from '../../challenges.json';
@@ -42,9 +43,9 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
 
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
 
-  //  useEffect(() => {
-  //    Notification.requestPermission();
-  //  }, [])
+  useEffect(() => {
+    Notification.requestPermission();
+  }, [])
 
   useEffect(() => {
     Cookies.set('level', String(level));
@@ -67,13 +68,17 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
 
     setActiveChallenge(challenge);
 
-    //    new Audio('/notification.mp3').play();
+    new Audio('/notification.mp3').play();
 
-    //    if (Notification.permission === 'granted') {
-    //      new Notification('Novo desafio 🎉', {
-    //        body: `Valendo ${challenge.amount}xp!`
-    //      })
-    //    }
+    if (isMobile) {
+      return;
+    }
+
+    if (Notification.permission === 'granted') {
+      new Notification('Novo desafio 🎉', {
+        body: `Valendo ${challenge.amount}xp!`
+      })
+    }
   }
 
   function resetChallenge() {
