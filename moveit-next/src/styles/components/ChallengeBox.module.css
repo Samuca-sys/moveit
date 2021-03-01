@@ -108,3 +108,25 @@
 .challengeActive footer button:hover {
   filter: brightness(0.9);
 }
+
+/* dark mode */
+
+:global .dark-mode:root :local .challengeActive footer button.challengeFailedButton {
+  background: var(--red);
+  color: var(--text);
+}
+
+:global .dark-mode:root :local .challengeActive footer button.challengeSucceededButton {
+  background: #1f5e0f;
+  color: var(--text);
+}
+
+:global .dark-mode:root :local .challengeActive footer button.challengeFailedButton:hover {
+  background-color: #973949;
+  color: var(--white);
+}
+
+:global .dark-mode:root :local .challengeActive footer button.challengeSucceededButton:hover {
+  background-color: var(--green);
+  color: var(--white);
+}

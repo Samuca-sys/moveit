@@ -17,6 +17,7 @@
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--title);
+  margin-right: 0.5rem;
 }
 
 .profileContainer div strong {
@@ -25,5 +26,27 @@
 }
 
 .profileContainer div p img {
+  margin-right: 0.5rem;
+}
+
+.profileContainer button {
+  background: var(--white);
+  height: 1.5rem;
+  border: 0;
+  border-radius: 3px;
+  font-weight: 600;
+  color: var(--title);
+  margin-right: 0.5rem;
+}
+
+:global .dark-mode:root :local .profileContainer button {
+  background: var(--blue-dark);
+  border: 0;
+  border-radius: 3px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+:global .dark-mode:root :local .profileContainer  div strong {
   margin-right: 0.5rem;
 }

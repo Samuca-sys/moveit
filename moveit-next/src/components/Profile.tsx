@@ -1,9 +1,22 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ChallengesContext } from "../contexts/ChallengesContext";
+import { ThemeContext } from "../contexts/ThemeContext";
 import styles from "../styles/components/Profile.module.css";
 
 export function Profile() {
   const { level } = useContext(ChallengesContext);
+  const { isDark, toggleDarkMode } = useContext(ThemeContext);
+
+  useEffect(() => {
+    const html = document.body.parentNode as HTMLElement;
+
+    if (isDark) {
+      html.classList.add('dark-mode');
+    }
+    else {
+      html.classList.remove('dark-mode');
+    }
+  }, [isDark]);
 
   return (
     <div className={styles.profileContainer}>
@@ -11,6 +24,11 @@ export function Profile() {
         alt="Samuel Macedo" />
       <div>
         <strong>Samuel Macedo</strong>
+        <button type="button" onClick={toggleDarkMode}>
+          <span className="material-icons">
+            {isDark ? 'LIGHT' : 'DARK'}
+          </span>
+        </button>
         <p>
           <img src="icons/level.svg" alt="Level" />
           Level {level}

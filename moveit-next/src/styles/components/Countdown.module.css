@@ -101,3 +101,12 @@
   margin-left: 0.8rem;
 }
 
+:global .dark-mode:root :local .countdownButtonActive:not(:disabled):hover {
+  background: var(--red);
+  color: var(--text);
+}
+
+:global .dark-mode:root :local .countdownButtonActive:not(:disabled) img {
+  filter: brightness(0.2);
+}
+

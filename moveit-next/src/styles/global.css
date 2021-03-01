@@ -18,6 +18,21 @@
   --blue-twitter: #2aa9e0;
 }
 
+.dark-mode:root {
+  --white: #222225;
+  --background: #17171a;
+  --gray-line: #47484d;
+  --text: #AAA;
+  --text-highlight: #B3B9FF;
+  --title: #61749c;
+  --red: #852434;
+  --green: #4cd62b;
+  --blue: #5965E0;
+  --blue-dark: #4953B8;
+  --blue-twitter: #2AA9E0;
+  --shadow: rgba(231, 231, 255, 0.04);
+}
+
 @media(max-width: 1080px) { 
   html {
     font-size: 93.75%;
@@ -27,6 +42,14 @@
 @media(max-width: 720px) { 
   html {
     font-size: 87.5%;
+  }
+}
+
+@media(max-width: 660px) { 
+  body{
+  }
+  section {
+    margin-top: 2rem;
   }
 }
 
