@@ -4,29 +4,15 @@ import Document,
   Head,
   Main,
   NextScript,
-  DocumentInitialProps,
   DocumentProps
 } from 'next/document';
 
-interface MyDocumentInitialProps extends DocumentInitialProps {
-  isDark?: boolean;
-}
 
 interface MyDocumentProps extends DocumentProps {
   isDark: boolean;
 }
 
 export default class MyDocument extends Document<MyDocumentProps> {
-
-  static async getInitialProps(ctx) {
-    const { isDark } = ctx.req.cookies;
-
-    const initialProps: MyDocumentInitialProps = await super.getInitialProps(ctx);
-    initialProps.isDark = Boolean(Number(isDark));
-
-    return initialProps;
-  }
-
   render() {
     return (
       <Html className={this.props.isDark ? 'dark-mode' : ''}>
