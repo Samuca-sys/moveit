@@ -56,4 +56,4 @@ This application was developed during the `NLW(Next Level Week workshop)`.  An e
 
 ## :page_facing_up: License
 
-This project is under the MIT license. See the file [LICENSE] for more informations about.
+This project is under the MIT license. See the file [LICENSE](https://github.com/Samuca-sys/moveit/blob/main/LICENSE.txt) for more informations about.
